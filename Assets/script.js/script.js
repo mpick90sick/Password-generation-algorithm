@@ -11,8 +11,8 @@ function writePassword() {
 }
 function generatePassword() {
   // code goes here
-  let chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var passwordLength = 12
+  var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var passwordLength = 12;
   var password = ""
   for (var i = 0; i <= passwordLength; i++) {
     var randomNumber = Math.floor(Math.random() * chars.length);
@@ -21,8 +21,12 @@ function generatePassword() {
   document.getElementById("password").value = password;
   }
 
-
-
+function copyPassword() {
+  var copyText = document.getElementById("#password");
+  copyText.Select();
+  copyText.setSelectionRange(0, 999)
+  document.commandId("copy")
+}
 // Add event listener to generate button
 
 generateBtn.addEventListener("click", writePassword, function() {
